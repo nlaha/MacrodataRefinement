@@ -1,0 +1,29 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+uniform float per_inst;
+uniform float noise_lg;
+uniform vec2 coords;
+
+const float PI=3.14159265358979323846;
+
+float rand(vec2 c){
+	return fract(sin(dot(c.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+void fragment(){
+  COLOR = texture(TEXTURE, UV); //read from texture
+  COLOR.rgb = vec3(0.7, 1.0, 1.0); //set blue channel to 1.0
+}
+
+void vertex() {
+  float fade = mix(1.0, 1.2, abs(sin(per_inst * (TIME))));
+  if (noise_lg == 0.0)
+  {
+	VERTEX *= vec2(fade, fade);
+  	VERTEX += vec2(sin(per_inst * (TIME * 4.0)), cos(per_inst * (TIME * 4.0)));
+  } else {
+	VERTEX *= vec2(1.2, 1.2);
+  }
+}"

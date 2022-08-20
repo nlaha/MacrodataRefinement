@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://CRT_Material.tres" type="Material" id=1]
+[ext_resource path="res://FileLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://default_env.tres" type="Environment" id=3]
+[ext_resource path="res://MicroSquare Heavy.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Lumon.png" type="Texture" id=5]
+[ext_resource path="res://Numbers.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color( 2, 2, 2, 1 )
+margin_left = -54.0
+margin_top = 108.0
+margin_right = 1335.0
+margin_bottom = 113.0
+color = Color( 0.560784, 0.854902, 1, 1 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color( 2, 2, 2, 1 )
+margin_left = -54.0
+margin_top = 629.0
+margin_right = 1335.0
+margin_bottom = 634.0
+color = Color( 0.560784, 0.854902, 1, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color( 2, 2, 2, 1 )
+margin_left = -54.0
+margin_top = 118.0
+margin_right = 1335.0
+margin_bottom = 123.0
+color = Color( 0.560784, 0.854902, 1, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color( 2, 2, 2, 1 )
+margin_left = -54.0
+margin_top = 619.0
+margin_right = 1335.0
+margin_bottom = 624.0
+color = Color( 0.560784, 0.854902, 1, 1 )
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 88.0
+margin_top = -120.0
+margin_right = 1188.0
+margin_bottom = -15.0
+custom_constants/vseparation = 6
+custom_constants/hseparation = 25
+columns = 5
+
+[node name="FileLabel" parent="CanvasLayer2/GridContainer" instance=ExtResource( 2 )]
+
+[node name="FileLabel2" parent="CanvasLayer2/GridContainer" instance=ExtResource( 2 )]
+margin_left = 225.0
+margin_right = 425.0
+file_num = "02"
+
+[node name="FileLabel3" parent="CanvasLayer2/GridContainer" instance=ExtResource( 2 )]
+margin_left = 450.0
+margin_right = 650.0
+file_num = "03"
+
+[node name="FileLabel4" parent="CanvasLayer2/GridContainer" instance=ExtResource( 2 )]
+margin_left = 675.0
+margin_right = 875.0
+file_num = "04"
+
+[node name="FileLabel5" parent="CanvasLayer2/GridContainer" instance=ExtResource( 2 )]
+margin_left = 900.0
+margin_right = 1100.0
+file_num = "05"
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+modulate = Color( 2, 2, 2, 1 )
+margin_left = 70.0
+margin_top = 30.0
+margin_right = 404.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.478431, 0.780392, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Dranesville"
+
+[node name="Lumon" type="Sprite" parent="CanvasLayer2"]
+modulate = Color( 2, 2, 2, 1 )
+material = SubResource( 2 )
+position = Vector2( 654, 310 )
+scale = Vector2( 1, 0.786458 )
+texture = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = ExtResource( 1 )
+margin_right = 1280.0
+margin_bottom = 768.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 768.0
+color = Color( 0.121569, 0.2, 0.298039, 1 )
+
+[node name="Node2D" parent="ColorRect" instance=ExtResource( 6 )]
